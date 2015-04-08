@@ -116,7 +116,6 @@
 {
     _time.text = [NSString stringWithFormat:@"%@/%@",[self _timeFormatted:_player.currentTime],_duration];
     _progress.value = _player.currentTime/_player.duration;
-
 }
 
 - (NSString *)_timeFormatted:(int)totalSeconds

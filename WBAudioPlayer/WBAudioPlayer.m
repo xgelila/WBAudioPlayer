@@ -62,16 +62,20 @@
         _player = nil;
     }
     _duration = 0;
-    NSURL * url = [NSURL fileURLWithPath:audio];
-    _player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    if (_player != nil)
+    if (audio != nil)
     {
-        _player.enableRate = YES;
-        _player.numberOfLoops = 0;
-        _duration = _player.duration;
-        _player.delegate = self;
-        [self showSongInfoWithAudio:audio];
-        return YES;
+        NSURL * url = [NSURL fileURLWithPath:audio];
+        _player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        if (_player != nil)
+        {
+            _player.enableRate = YES;
+            _player.numberOfLoops = 0;
+            _duration = _player.duration;
+            _player.delegate = self;
+            [self showSongInfoWithAudio:audio];
+            return YES;
+        }
+ 
     }
     return NO;
 }
@@ -265,4 +269,9 @@
 {
     return _player.playing;
 }
+
+- (float)deviceCurrentTime
+{
+    return _player.deviceCurrentTime;
+};
 @end

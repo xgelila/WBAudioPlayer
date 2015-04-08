@@ -68,4 +68,6 @@ typedef void (^PlayFinishBlock)();
 - (void)setVolume:(float)volume;
 
 - (BOOL)playing;
+
+- (float)deviceCurrentTime;
 @end
