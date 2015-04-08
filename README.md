@@ -56,25 +56,20 @@ _player.interrutionBlock = ^(WBAudioPlayerinterruptionType type){
     _player.remoteEventBlock = ^(WBAudioPlayerRemoteEventType type){
         if (type == WBAudioPlayerRemoteEventTypePlay)
         {
-            //响应远程播放事件
-            NSLog(@"响应远程播放事件");
+            
             [weakSelf _initionalTimer];
             
         }else if(type == WBAudioPlayerRemoteEventTypePause){
-            //响应远程暂停事件
-            NSLog(@"响应远程暂停事件");
             [weakSelf _destroyTimer];
         }
     };
     _player.headPhonePlugBlock = ^(WBAudioPlayerHeadPhonePlugType type){
         if (type == WBAudioPlayerHeadPhonePlugTypePlugin)
         {
-            //响应耳机插入事件
-            NSLog(@"响应耳机插入事件");
+            
         }else{
-            //响应耳机拔出事件
-            NSLog(@"响应耳机拔出事件");
-            [weakSelf _destroyTimer];
+            
+           [weakSelf _destroyTimer];
         }
 
     };
