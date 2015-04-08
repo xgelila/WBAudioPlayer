@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3746B3071ACE99FA0063E94E /* You Are Not Alone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3746B3061ACE99FA0063E94E /* You Are Not Alone.mp3 */; };
 		374907DB1ACD281B0096F4CC /* WBAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 374907DA1ACD281B0096F4CC /* WBAudioPlayer.m */; };
-		374907DD1ACD67EE0096F4CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 374907DC1ACD67EE0096F4CC /* UIKit.framework */; };
 		378330621ACC3C6D000E2A20 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378330611ACC3C6D000E2A20 /* MediaPlayer.framework */; };
 		37A92EC21ACA9E2C00642BA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A92EC11ACA9E2C00642BA9 /* main.m */; };
 		37A92EC51ACA9E2C00642BA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A92EC41ACA9E2C00642BA9 /* AppDelegate.m */; };
@@ -19,7 +17,7 @@
 		37A92ED01ACA9E2C00642BA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37A92ECE1ACA9E2C00642BA9 /* LaunchScreen.xib */; };
 		37A92EDC1ACA9E2C00642BA9 /* WBAudioPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A92EDB1ACA9E2C00642BA9 /* WBAudioPlayerTests.m */; };
 		37A92EE61ACAB24500642BA9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A92EE51ACAB24500642BA9 /* AVFoundation.framework */; };
-		37A92EE81ACAB68700642BA9 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 37A92EE71ACAB68700642BA9 /* test.mp3 */; };
+		37D5423E1AD51BFD0085EBD3 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 37D5423D1AD51BFD0085EBD3 /* test.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,10 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3746B3061ACE99FA0063E94E /* You Are Not Alone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "You Are Not Alone.mp3"; sourceTree = "<group>"; };
 		374907D91ACD281B0096F4CC /* WBAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBAudioPlayer.h; sourceTree = "<group>"; };
 		374907DA1ACD281B0096F4CC /* WBAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBAudioPlayer.m; sourceTree = "<group>"; };
-		374907DC1ACD67EE0096F4CC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		378330611ACC3C6D000E2A20 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		37A92EBC1ACA9E2C00642BA9 /* WBAudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBAudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A92EC01ACA9E2C00642BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,7 +48,7 @@
 		37A92EDA1ACA9E2C00642BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37A92EDB1ACA9E2C00642BA9 /* WBAudioPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBAudioPlayerTests.m; sourceTree = "<group>"; };
 		37A92EE51ACAB24500642BA9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		37A92EE71ACAB68700642BA9 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
+		37D5423D1AD51BFD0085EBD3 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +56,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				374907DD1ACD67EE0096F4CC /* UIKit.framework in Frameworks */,
 				378330621ACC3C6D000E2A20 /* MediaPlayer.framework in Frameworks */,
 				37A92EE61ACAB24500642BA9 /* AVFoundation.framework in Frameworks */,
 			);
@@ -79,7 +74,6 @@
 		37A92EB31ACA9E2C00642BA9 = {
 			isa = PBXGroup;
 			children = (
-				374907DC1ACD67EE0096F4CC /* UIKit.framework */,
 				378330611ACC3C6D000E2A20 /* MediaPlayer.framework */,
 				37A92EE51ACAB24500642BA9 /* AVFoundation.framework */,
 				37A92EBE1ACA9E2C00642BA9 /* WBAudioPlayer */,
@@ -117,8 +111,7 @@
 		37A92EBF1ACA9E2C00642BA9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3746B3061ACE99FA0063E94E /* You Are Not Alone.mp3 */,
-				37A92EE71ACAB68700642BA9 /* test.mp3 */,
+				37D5423D1AD51BFD0085EBD3 /* test.mp3 */,
 				37A92EC01ACA9E2C00642BA9 /* Info.plist */,
 				37A92EC11ACA9E2C00642BA9 /* main.m */,
 			);
@@ -223,10 +216,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3746B3071ACE99FA0063E94E /* You Are Not Alone.mp3 in Resources */,
+				37D5423E1AD51BFD0085EBD3 /* test.mp3 in Resources */,
 				37A92ECB1ACA9E2C00642BA9 /* Main.storyboard in Resources */,
 				37A92ED01ACA9E2C00642BA9 /* LaunchScreen.xib in Resources */,
-				37A92EE81ACAB68700642BA9 /* test.mp3 in Resources */,
 				37A92ECD1ACA9E2C00642BA9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

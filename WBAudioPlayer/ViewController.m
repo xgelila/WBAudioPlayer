@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSString * audioFile = [[NSBundle mainBundle] pathForResource:@"You Are Not Alone" ofType:@"mp3"];
+    NSString * audioFile = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"mp3"];
     _player = [WBAudioPlayer instance];
     BOOL rt =  [_player createAudioTrack:audioFile];
     if (rt)
