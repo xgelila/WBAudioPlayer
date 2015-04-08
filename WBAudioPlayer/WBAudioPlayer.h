@@ -7,7 +7,6 @@
 //
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-#import <UIKit/UIKit.h>
 #pragma mark -- enumerations --
 //音频中断通知类型
 typedef NS_ENUM(NSInteger, WBAudioPlayerinterruptionType)
