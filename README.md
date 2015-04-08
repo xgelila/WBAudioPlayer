@@ -2,9 +2,12 @@
 ---
 WBAudioPlayer is a audio player which can play local audio file.
 
-Handle interruptions such as a phone call,a alarm of Clock or Calendar,or another app activating its audio session;
-Handle Headphone plugin or plugout;
-Handle Remote Control Events;
+Handle interruptions such as a phone call,a alarm of Clock or Calendar,or another app activating its audio session.
+
+Handle Headphone plugin or plugout.
+
+Handle Remote Control Events.
+
 Display song's info and the status of playback on the locked screen.
 
 ##Require
