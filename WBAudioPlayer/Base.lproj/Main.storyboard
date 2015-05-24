@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,31 +18,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3tR-xc-7TI">
-                                <rect key="frame" x="188" y="262" width="118" height="31"/>
+                                <rect key="frame" x="188" y="347" width="118" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="114" id="XVT-eq-0fd"/>
+                                    <constraint firstAttribute="width" constant="114" id="XJF-8J-WdR"/>
                                 </constraints>
                                 <connections>
                                     <action selector="volumeChange:" destination="vXZ-lx-hvc" eventType="valueChanged" id="mnw-kk-RBq"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音量" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxu-5U-4g0">
-                                <rect key="frame" x="65" y="274" width="34" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FEo-Ez-RjH">
-                                <rect key="frame" x="188" y="357" width="118" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="114" id="ZvN-cs-QZe"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="rateChage:" destination="vXZ-lx-hvc" eventType="valueChanged" id="p8x-oF-3hc"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="速率" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mu6-9s-TaH">
-                                <rect key="frame" x="65" y="363" width="34" height="21"/>
+                                <rect key="frame" x="65" y="352" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -64,30 +49,40 @@
                                     <action selector="finishSeek:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GfM-MH-YD3"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F62-5J-pHA">
+                                <rect key="frame" x="135" y="455" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="fof-e2-9l7"/>
+                                    <constraint firstAttribute="height" constant="30" id="sLQ-dm-cHF"/>
+                                </constraints>
+                                <state key="normal" title="play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PYR-Se-ckt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="PVD-zS-ClK" secondAttribute="trailing" constant="-11" id="1f9-UV-iCg"/>
-                            <constraint firstItem="eIc-sd-s2L" firstAttribute="top" secondItem="FEo-Ez-RjH" secondAttribute="bottom" constant="105" id="CxB-4p-2Sf"/>
+                            <constraint firstItem="eIc-sd-s2L" firstAttribute="top" secondItem="3tR-xc-7TI" secondAttribute="bottom" constant="115" id="8B2-ec-kx4"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="PVD-zS-ClK" secondAttribute="bottom" constant="28" id="FjJ-QV-X6M"/>
-                            <constraint firstItem="mu6-9s-TaH" firstAttribute="top" secondItem="mxu-5U-4g0" secondAttribute="bottom" constant="69" id="Lt4-K4-8kH"/>
-                            <constraint firstItem="3tR-xc-7TI" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="NYF-WQ-K0D"/>
-                            <constraint firstItem="PVD-zS-ClK" firstAttribute="top" secondItem="mu6-9s-TaH" secondAttribute="bottom" constant="126" id="USl-10-jwA"/>
-                            <constraint firstItem="FEo-Ez-RjH" firstAttribute="top" secondItem="3tR-xc-7TI" secondAttribute="bottom" constant="65" id="XlM-kR-3LB"/>
+                            <constraint firstItem="3tR-xc-7TI" firstAttribute="centerY" secondItem="mxu-5U-4g0" secondAttribute="centerY" id="JJF-Zj-i0G"/>
+                            <constraint firstItem="PVD-zS-ClK" firstAttribute="centerX" secondItem="F62-5J-pHA" secondAttribute="centerX" id="MzP-o4-WpA"/>
+                            <constraint firstItem="PVD-zS-ClK" firstAttribute="top" secondItem="F62-5J-pHA" secondAttribute="bottom" constant="25" id="Vxp-gn-DNz"/>
                             <constraint firstItem="PVD-zS-ClK" firstAttribute="top" secondItem="eIc-sd-s2L" secondAttribute="bottom" constant="-3" id="YhM-K5-LoM"/>
                             <constraint firstAttribute="centerX" secondItem="PVD-zS-ClK" secondAttribute="centerX" constant="2" id="b8S-LC-XmU"/>
-                            <constraint firstItem="FEo-Ez-RjH" firstAttribute="leading" secondItem="mu6-9s-TaH" secondAttribute="trailing" constant="91" id="fgG-8h-AI2"/>
-                            <constraint firstItem="FEo-Ez-RjH" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="iCT-dh-qXD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eIc-sd-s2L" secondAttribute="trailing" constant="5" id="kNF-Mv-dY4"/>
-                            <constraint firstItem="FEo-Ez-RjH" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="nFJ-re-R4E"/>
-                            <constraint firstItem="3tR-xc-7TI" firstAttribute="leading" secondItem="mxu-5U-4g0" secondAttribute="trailing" constant="91" id="rr0-e5-j2c"/>
+                            <constraint firstItem="3tR-xc-7TI" firstAttribute="leading" secondItem="mxu-5U-4g0" secondAttribute="trailing" constant="91" id="oyR-9i-SDu"/>
                             <constraint firstItem="PVD-zS-ClK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-15" id="vus-EK-Z7e"/>
+                            <constraint firstItem="3tR-xc-7TI" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="wdf-1P-Us1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kD1-6R-soZ"/>
                     <connections>
+                        <outlet property="playButton" destination="F62-5J-pHA" id="nSc-Xz-nA3"/>
                         <outlet property="progress" destination="PVD-zS-ClK" id="it2-71-pX6"/>
-                        <outlet property="rate" destination="FEo-Ez-RjH" id="0KU-NX-peH"/>
                         <outlet property="time" destination="eIc-sd-s2L" id="NJ9-u1-AUU"/>
                         <outlet property="volume" destination="3tR-xc-7TI" id="Pam-bt-h1V"/>
                     </connections>

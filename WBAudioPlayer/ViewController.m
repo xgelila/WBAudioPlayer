@@ -10,9 +10,9 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UISlider * volume;
-@property (weak, nonatomic) IBOutlet UISlider * rate;
 @property (weak, nonatomic) IBOutlet UILabel  * time;
 @property (weak, nonatomic) IBOutlet UISlider * progress;
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
 
 @end
 
@@ -41,6 +41,7 @@
     if (rt)
     {
         [_player play];
+        [_playButton setTitle:@"pause" forState:UIControlStateNormal];
         _duration = [self _timeFormatted:_player.duration];
         [self _configCallback];
     }
@@ -71,10 +72,10 @@
     _player.interrutionBlock = ^(WBAudioPlayerinterruptionType type){
         if (type == WBAudioPlayerinterruptionTypeBegin)
         {
-            [weakSelf _destroyTimer];
+            [weakSelf _pause];
         }else if (type == WBAudioPlayerinterruptionTypeEnd)
         {
-            [weakSelf _initionalTimer];
+            [weakSelf _play];
         }
     };
     _player.remoteEventBlock = ^(WBAudioPlayerRemoteEventType type){
@@ -82,12 +83,12 @@
         {
             //响应远程播放事件
             NSLog(@"响应远程播放事件");
-            [weakSelf _initionalTimer];
+            [weakSelf _play];
             
         }else if(type == WBAudioPlayerRemoteEventTypePause){
             //响应远程暂停事件
             NSLog(@"响应远程暂停事件");
-            [weakSelf _destroyTimer];
+            [weakSelf _pause];
         }
     };
     _player.headPhonePlugBlock = ^(WBAudioPlayerHeadPhonePlugType type){
@@ -98,12 +99,12 @@
         }else{
             //响应耳机拔出事件
             NSLog(@"响应耳机拔出事件");
-            [weakSelf _destroyTimer];
+            [weakSelf _pause];
         }
 
     };
     _player.playFinishBlock = ^(){
-        [weakSelf _destroyTimer];
+        [weakSelf _pause];
         NSLog(@"播放结束");
     };
     
@@ -123,6 +124,18 @@
     int seconds = totalSeconds % 60;
     int minutes = (totalSeconds / 60) % 60;
     return [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+}
+
+- (void)_play
+{
+    [_playButton setTitle:@"pause" forState:UIControlStateNormal];
+    [self _initionalTimer];
+}
+
+- (void)_pause
+{
+    [_playButton setTitle:@"play" forState:UIControlStateNormal];
+    [self _destroyTimer];
 }
 
 #pragma mark -- NSTimer
@@ -148,11 +161,6 @@
    [_player setVolume:sender.value];
 }
 
-- (IBAction)rateChage:(UISlider *)sender
-{
-    [_player setRate:sender.value*2.0];
-}
-
 - (IBAction)finishSeek:(UISlider *)sender
 {
     [_player setCurrentTime:sender.value*_player.duration];
@@ -164,6 +172,17 @@
     [self _destroyTimer];
 }
 
+- (IBAction)playButtonClick:(UIButton *)sender
+{
+    if (_player.playing)
+    {
+        [_player pause];
+        [self _pause];
+    }else{
+        [_player play];
+        [self _play];
+    }
+}
 #pragma mark -- UIApplicationDidEnterBackgroundNotification UIApplicationDidBecomeActiveNotification
 
 - (void)enterBackgroundCallback:(NSNotification *)notification

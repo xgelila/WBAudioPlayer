@@ -30,6 +30,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3741A4771B1297C0009CA1B7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		374907D91ACD281B0096F4CC /* WBAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBAudioPlayer.h; sourceTree = "<group>"; };
 		374907DA1ACD281B0096F4CC /* WBAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBAudioPlayer.m; sourceTree = "<group>"; };
@@ -145,6 +158,7 @@
 				37A92EB81ACA9E2C00642BA9 /* Sources */,
 				37A92EB91ACA9E2C00642BA9 /* Frameworks */,
 				37A92EBA1ACA9E2C00642BA9 /* Resources */,
+				3741A4771B1297C0009CA1B7 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);

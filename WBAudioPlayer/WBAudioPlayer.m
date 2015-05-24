@@ -51,7 +51,7 @@
     MPRemoteCommandCenter *commandCenter = [MPRemoteCommandCenter sharedCommandCenter];
     [commandCenter.playCommand addTarget:self action:@selector(didReceivePlayCommand:)];
     [commandCenter.pauseCommand addTarget:self action:@selector(didReceivePauseCommand:)];
-    
+    commandCenter.stopCommand.enabled = NO;
 }
 #pragma mark- interface
 - (BOOL)createAudioTrack:(NSString *)audio
@@ -69,7 +69,7 @@
         if (_player != nil)
         {
             _player.enableRate = YES;
-            _player.numberOfLoops = 0;
+            _player.numberOfLoops = -1;
             _duration = _player.duration;
             _player.delegate = self;
             [self showSongInfoWithAudio:audio];
@@ -91,7 +91,7 @@
 }
 
 
-#pragma mark- receiveRemoteCommand
+#pragma mark - receiveRemoteCommand
 - (void)didReceivePlayCommand:(MPRemoteCommandEvent *)event
 {
     [_player play];
