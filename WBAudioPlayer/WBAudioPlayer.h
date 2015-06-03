@@ -70,4 +70,6 @@ typedef void (^PlayFinishBlock)();
 - (BOOL)playing;
 
 - (float)deviceCurrentTime;
+
+- (void)updateNowPlayingInfoWithRate:(CGFloat)rate;
 @end

@@ -165,6 +165,7 @@
 {
     [_player setCurrentTime:sender.value*_player.duration];
     [self _initionalTimer];
+    [_player updateNowPlayingInfoWithRate:[_player rate]];
 }
 
 - (IBAction)beginSeek:(UISlider *)sender
@@ -176,11 +177,11 @@
 {
     if (_player.playing)
     {
-        [_player pause];
         [self _pause];
+        [_player pause];
     }else{
-        [_player play];
         [self _play];
+        [_player play];
     }
 }
 #pragma mark -- UIApplicationDidEnterBackgroundNotification UIApplicationDidBecomeActiveNotification

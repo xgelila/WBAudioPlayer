@@ -69,7 +69,6 @@
         if (_player != nil)
         {
             _player.enableRate = YES;
-            _player.numberOfLoops = -1;
             _duration = _player.duration;
             _player.delegate = self;
             [self showSongInfoWithAudio:audio];
@@ -90,11 +89,18 @@
     }
 }
 
-
+- (void)updateNowPlayingInfoWithRate:(CGFloat)rate
+{
+    NSMutableDictionary * info = [[MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo mutableCopy];
+    [info setObject:@(rate) forKey:MPNowPlayingInfoPropertyPlaybackRate];
+    NSLog(@"_player.currentTime = %f",_player.currentTime);
+    [info setObject:@(_player.currentTime) forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:info];
+}
 #pragma mark - receiveRemoteCommand
 - (void)didReceivePlayCommand:(MPRemoteCommandEvent *)event
 {
-    [_player play];
+    [self play];
     if (_remoteEventBlock != nil)
     {
         _remoteEventBlock(WBAudioPlayerRemoteEventTypePlay);
@@ -103,7 +109,7 @@
 
 - (void)didReceivePauseCommand:(MPRemoteCommandEvent *)event
 {
-    [_player pause];
+    [self pause];
     if (_remoteEventBlock != nil)
     {
        _remoteEventBlock(WBAudioPlayerRemoteEventTypePause);
@@ -114,6 +120,7 @@
 #pragma mark- AVAudioPlayerDelegate
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
+    [self updateNowPlayingInfoWithRate:0.f];
     _playFinishBlock();
 }
 
@@ -180,7 +187,6 @@
         }
     }
 }
-
 #pragma mark- lock screen show song information
 - (void)showSongInfoWithAudio:(NSString *)audio
 {
@@ -217,19 +223,24 @@
         }
     }
     [songInfo setObject:@(_player.duration) forKey:MPMediaItemPropertyPlaybackDuration];
+    //[songInfo setObject:@(_player.currentTime) forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
+    [songInfo setObject:@(_player.rate) forKey:MPNowPlayingInfoPropertyPlaybackRate];
     
     [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];
 }
+
 #pragma mark- playback interface
 - (void)play
 {
     [_player prepareToPlay];
     [_player play];
+    [self updateNowPlayingInfoWithRate:_player.rate];
 }
 
 - (void)pause
 {
     [_player pause];
+    [self updateNowPlayingInfoWithRate:0.f];
 }
 
 - (void)stop
